@@ -1,0 +1,293 @@
+/* ============================================================================
+   TN HAPPY KIDS SCHOOL - AFTER SCHOOL ADMISSION MANAGEMENT SYSTEM
+   Premium High-Contrast Dark Blue Theme with Stepper Wizard
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-page: #0b132b;
+    --card-bg: #1c2541;
+    --card-inner: #0f172a;
+    --input-bg: #0f172a;
+    --input-border: #334155;
+    --input-focus: #38bdf8;
+
+    --primary-blue: #38bdf8;
+    --primary-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --accent-cyan: #38bdf8;
+    --accent-sky: #7dd3fc;
+
+    --text-white: #ffffff;
+    --text-label: #f1f5f9;
+    --text-muted: #94a3b8;
+
+    --radius-card: 1.25rem;
+    --radius-input: 0.85rem;
+    --shadow-dark: 0 12px 36px rgba(0, 0, 0, 0.4);
+    --glow-blue: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page) !important;
+    color: var(--text-label);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------------------------
+   Top Brand Header Card
+   ---------------------------------------------------------------------------- */
+.brand-header-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-card);
+    padding: 1.75rem 2rem;
+    box-shadow: var(--shadow-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    border: 2px solid #2563eb;
+    margin-bottom: 1.5rem;
+}
+
+.brand-header-card .logo-container {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 4px;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brand-header-card .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brand-header-card .school-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-white);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.brand-header-card .form-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-top: 0.25rem;
+}
+
+/* ----------------------------------------------------------------------------
+   NEW STEPPER WIZARD FORMAT (Replacing progress bar)
+   ---------------------------------------------------------------------------- */
+.stepper-container {
+    background: var(--card-bg);
+    border-radius: 1.25rem;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-dark);
+    border: 1px solid #1e3a8a;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.stepper-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+}
+
+.stepper-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 2px solid #334155;
+    color: var(--text-muted);
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.stepper-item.active .stepper-circle {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.stepper-item.completed .stepper-circle {
+    background: #059669;
+    border-color: #10b981;
+    color: #ffffff;
+}
+
+.stepper-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.stepper-step-no {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.stepper-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-white);
+}
+
+.stepper-connector {
+    flex-grow: 1;
+    height: 3px;
+    background: #334155;
+    margin: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.stepper-connector.active {
+    background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* ----------------------------------------------------------------------------
+   Form Step Cards & Controls
+   ---------------------------------------------------------------------------- */
+.form-step-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-card);
+    padding: 2.25rem;
+    box-shadow: var(--shadow-dark);
+    border: 1px solid #1e3a8a;
+    margin-bottom: 2rem;
+}
+
+.step-title-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-white);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #1e293b;
+    margin-bottom: 1.75rem;
+}
+
+.step-icon-badge {
+    width: 46px;
+    height: 46px;
+    border-radius: 0.85rem;
+    background: #1e3a8a;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+.form-label-custom {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-label);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-label-custom .required-star {
+    color: #f87171;
+}
+
+.form-control-custom {
+    background-color: var(--input-bg) !important;
+    border: 1.5px solid var(--input-border) !important;
+    border-radius: var(--radius-input) !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    color: var(--text-white) !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+
+.form-control-custom:focus {
+    background-color: #0b132b !important;
+    border-color: var(--input-focus) !important;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25) !important;
+    outline: none !important;
+}
+
+.form-control-custom::placeholder {
+    color: var(--text-muted) !important;
+}
+
+select.form-control-custom option {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* Button Styling */
+.btn-primary-blue {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff !important;
+    border: 1px solid #3b82f6;
+    border-radius: var(--radius-input);
+    padding: 0.9rem 2.5rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-primary-blue:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+}
+
+.guardian-card-box {
+    background: var(--card-inner);
+    border: 1px solid #334155;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+/* Utility Colors */
+.text-primary { color: #38bdf8 !important; }
+.text-info { color: #38bdf8 !important; }
+.text-muted { color: #94a3b8 !important; }
+
+/* Sidebar & Admin Topbar */
+#sidebar {
+    background: #0b132b !important;
+    border-right: 1px solid #1e293b;
+}
+
+/* Print Overrides */
+@media print {
+    body { background: #ffffff !important; color: #000000 !important; }
+    .brand-header-card, .form-step-card, .stepper-container { background: #ffffff !important; color: #000000 !important; }
+}
