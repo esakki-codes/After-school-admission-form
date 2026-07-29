@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TN Happy Kids School - After School Admission Form - TN Happy Kids School Online Admission</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Custom Stylesheet -->
+    <link href="CSS/custom.css" rel="stylesheet" type="text/css" />
+
+    
+</head>
+<body style="background-color: #0b132b;">
+    <form id="formPublic" action="PublicReceipt.aspx" method="GET">
+        <main class="py-4">
+            <div class="container" style="max-width: 900px;">
+                
+    <div>
+
+        <!-- Top Header Card with Official Logo -->
+        <div class="brand-header-card text-center py-4">
+            <div class="logo-container mx-auto mb-3" style="width: 130px; height: 130px; border-radius: 50%; padding: 6px;">
+                <img src="Images/logo.png" alt="TN Happy Kids Logo" style="width: 100%; height: 100%; object-fit: contain;" />
+            </div>
+            <div>
+                <h1 class="school-title" style="font-size: 2.3rem;">TN Happy Kids</h1>
+                <div class="form-subtitle" style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 700;">(An Unit of MAAS Group of Companies)</div>
+                <div class="form-subtitle mt-1" style="font-size: 1.25rem;"><i class="fa-solid fa-graduation-cap me-2"></i>After School Admission Form</div>
+            </div>
+        </div>
+
+        <!-- INTERACTIVE STEPPER WIZARD -->
+        <div class="stepper-container mb-4">
+            <div class="stepper-item active" id="stepIndicator1">
+                <div class="stepper-circle">01</div>
+                <div class="stepper-label">
+                    <span class="stepper-step-no">Step 01</span>
+                    <span class="stepper-title">Student Info</span>
+                </div>
+            </div>
+            <div class="stepper-connector" id="stepConnector"></div>
+            <div class="stepper-item" id="stepIndicator2">
+                <div class="stepper-circle">02</div>
+                <div class="stepper-label">
+                    <span class="stepper-step-no">Step 02</span>
+                    <span class="stepper-title">Parents & Guardians</span>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+
+        <!-- STEP 1: STUDENT INFORMATION -->
+        <div class="form-step-card" id="step1">
+            <div class="step-title-header">
+                <div class="step-icon-badge">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <span>1. Student Information</span>
+            </div>
+
+            <div class="row g-4 mb-3">
+                <div class="col-md-12">
+                    <label for="txtFullName" class="form-label-custom">Student Full Name <span class="required-star">*</span></label>
+                    <input type="text" class="form-control-custom" id="txtFullName" name="txtFullName" placeholder="Enter student's full name (Minimum 3 characters)" />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="txtDOB" class="form-label-custom">Date of Birth <span class="required-star">*</span></label>
+                    <input type="date" class="form-control-custom" id="txtDOB" name="txtDOB" />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="txtAge" class="form-label-custom">Age (Auto Calculated)</label>
+                    <input type="text" class="form-control-custom" id="txtAge" name="txtAge" placeholder="Select date of birth" />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label-custom">Gender <span class="required-star">*</span></label>
+                    <select class="form-select form-control-custom" id="ddlGender" name="ddlGender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="ddlBloodGroup" class="form-label-custom">Blood Group</label>
+                    <select class="form-select form-control-custom" id="ddlBloodGroup" name="ddlBloodGroup">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+
+                <!-- ADDED: CURRENT SCHOOL NAME & CLASS / STANDARD -->
+                <div class="col-md-6">
+                    <label for="txtSchoolName" class="form-label-custom">Current School Name</label>
+                    <input type="text" class="form-control-custom" id="txtSchoolName" name="txtSchoolName" placeholder="Enter school name" />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="txtStandard" class="form-label-custom">Class / Standard <span class="required-star">*</span></label>
+                    <input type="text" class="form-control-custom" id="txtStandard" name="txtStandard" placeholder="e.g. LKG, UKG, Class 4" />
+                </div>
+
+                <!-- WHICH ROUTE ARE YOU COMING FROM? -->
+                <div class="col-md-12">
+                    <label for="txtComingFrom" class="form-label-custom">Which route are you coming from?</label>
+                    <input type="text" class="form-control-custom" id="txtComingFrom" name="txtComingFrom" placeholder="Enter route / travel route / area location" />
+                </div>
+
+                <div class="col-md-12">
+                    <label for="txtAddress" class="form-label-custom">Residential Address <span class="required-star">*</span></label>
+                    <textarea class="form-control-custom" id="txtAddress" name="txtAddress"></textarea>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label-custom">Student Photo Upload</label>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="photo-preview-container" style="width: 100px; height: 100px; border-radius: 1rem; border: 2px dashed #38bdf8;">
+                            <img id="imgPhotoPreview" src="Images/Students/default-avatar.png" alt="Student Preview" style="object-fit: cover; width: 100%; height: 100%; border-radius: 0.9rem;" />
+                        </div>
+                        <div class="flex-grow-1">
+                            <input type="file" class="form-control-custom" id="filePhoto" name="filePhoto" accept="image/*" />
+                            <small class="text-muted d-block mt-1">Accepts JPG, PNG, WEBP images</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 2: PARENTS & GUARDIANS DETAILS (STACKED IN SEPARATE FULL-WIDTH LINES) -->
+        <div class="form-step-card" id="step2">
+            <div class="step-title-header">
+                <div class="step-icon-badge">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <span>2. Parent & Guardian Details</span>
+            </div>
+
+            <!-- LINE 1: FATHER DETAILS -->
+            <div class="guardian-card-box border-primary mb-4">
+                <h5 class="fw-bold text-primary mb-3"><i class="fa-solid fa-user me-2"></i>Father Information</h5>
+                <div class="row g-4">
+                    <div class="col-md-12">
+                        <div class="p-3 rounded mb-2" style="background: #0b132b; border: 1px dashed #38bdf8;">
+                            <label class="form-label-custom mb-2">Father Photo Upload</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 80px; height: 80px; border-radius: 0.75rem; overflow: hidden; background: #1c2541;">
+                                    <img id="imgFatherPhotoPreview" src="Images/Students/default-avatar.png" alt="Father Preview" style="object-fit: cover; width: 100%; height: 100%;" />
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input type="file" class="form-control-custom" id="fileFatherPhoto" name="fileFatherPhoto" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtFatherName" class="form-label-custom">Father Full Name <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtFatherName" name="txtFatherName" placeholder="Enter father name" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtFatherAadhaar" class="form-label-custom">Father Aadhaar Number <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtFatherAadhaar" name="txtFatherAadhaar" placeholder="12-digit Aadhaar number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtFatherMobile" class="form-label-custom">Mobile Number <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtFatherMobile" name="txtFatherMobile" placeholder="10-digit mobile number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtFatherWhatsApp" class="form-label-custom">WhatsApp Number</label>
+                        <input type="text" class="form-control-custom" id="txtFatherWhatsApp" name="txtFatherWhatsApp" placeholder="WhatsApp contact" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtFatherEmail" class="form-label-custom">Email Address</label>
+                        <input type="text" class="form-control-custom" id="txtFatherEmail" name="txtFatherEmail" placeholder="email@domain.com" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtFatherOccupation" class="form-label-custom">Occupation</label>
+                        <input type="text" class="form-control-custom" id="txtFatherOccupation" name="txtFatherOccupation" placeholder="Occupation" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtFatherOfficeAddress" class="form-label-custom">Office Address</label>
+                        <input type="text" class="form-control-custom" id="txtFatherOfficeAddress" name="txtFatherOfficeAddress" placeholder="Office location" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINE 2: MOTHER DETAILS -->
+            <div class="guardian-card-box border-primary mb-4">
+                <h5 class="fw-bold text-primary mb-3"><i class="fa-solid fa-user-nurse me-2"></i>Mother Information</h5>
+                <div class="row g-4">
+                    <div class="col-md-12">
+                        <div class="p-3 rounded mb-2" style="background: #0b132b; border: 1px dashed #38bdf8;">
+                            <label class="form-label-custom mb-2">Mother Photo Upload</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 80px; height: 80px; border-radius: 0.75rem; overflow: hidden; background: #1c2541;">
+                                    <img id="imgMotherPhotoPreview" src="Images/Students/default-avatar.png" alt="Mother Preview" style="object-fit: cover; width: 100%; height: 100%;" />
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input type="file" class="form-control-custom" id="fileMotherPhoto" name="fileMotherPhoto" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtMotherName" class="form-label-custom">Mother Full Name <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtMotherName" name="txtMotherName" placeholder="Enter mother name" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtMotherAadhaar" class="form-label-custom">Mother Aadhaar Number <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtMotherAadhaar" name="txtMotherAadhaar" placeholder="12-digit Aadhaar number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtMotherMobile" class="form-label-custom">Mobile Number <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtMotherMobile" name="txtMotherMobile" placeholder="10-digit mobile number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtMotherWhatsApp" class="form-label-custom">WhatsApp Number</label>
+                        <input type="text" class="form-control-custom" id="txtMotherWhatsApp" name="txtMotherWhatsApp" placeholder="WhatsApp contact" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtMotherEmail" class="form-label-custom">Email Address</label>
+                        <input type="text" class="form-control-custom" id="txtMotherEmail" name="txtMotherEmail" placeholder="email@domain.com" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtMotherOccupation" class="form-label-custom">Occupation</label>
+                        <input type="text" class="form-control-custom" id="txtMotherOccupation" name="txtMotherOccupation" placeholder="Occupation" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtMotherOfficeAddress" class="form-label-custom">Office Address</label>
+                        <input type="text" class="form-control-custom" id="txtMotherOfficeAddress" name="txtMotherOfficeAddress" placeholder="Office location" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINE 3: GUARDIAN 1 DETAILS -->
+            <div class="guardian-card-box border-info mb-4">
+                <h5 class="fw-bold text-info mb-3"><i class="fa-solid fa-shield-halved me-2"></i>Guardian 1 Information</h5>
+                <div class="row g-4">
+                    <div class="col-md-12">
+                        <div class="p-3 rounded mb-2" style="background: #0b132b; border: 1px dashed #38bdf8;">
+                            <label class="form-label-custom mb-2">Guardian 1 Photo Upload</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 80px; height: 80px; border-radius: 0.75rem; overflow: hidden; background: #1c2541;">
+                                    <img id="imgGuardian1PhotoPreview" src="Images/Students/default-avatar.png" alt="Guardian 1 Preview" style="object-fit: cover; width: 100%; height: 100%;" />
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input type="file" class="form-control-custom" id="fileGuardian1Photo" name="fileGuardian1Photo" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian1Name" class="form-label-custom">Guardian 1 Full Name <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Name" name="txtGuardian1Name" placeholder="Enter Guardian 1 name" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian1Aadhaar" class="form-label-custom">Guardian 1 Aadhaar Number</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Aadhaar" name="txtGuardian1Aadhaar" placeholder="12-digit Aadhaar number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian1Rel" class="form-label-custom">Relationship <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Rel" name="txtGuardian1Rel" placeholder="e.g. Grandfather, Uncle" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian1Mobile" class="form-label-custom">Mobile Number <span class="required-star">*</span></label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Mobile" name="txtGuardian1Mobile" placeholder="10-digit mobile number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian1WhatsApp" class="form-label-custom">WhatsApp Number</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1WhatsApp" name="txtGuardian1WhatsApp" placeholder="WhatsApp contact" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian1Email" class="form-label-custom">Email Address</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Email" name="txtGuardian1Email" placeholder="email@domain.com" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtGuardian1Occupation" class="form-label-custom">Occupation</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Occupation" name="txtGuardian1Occupation" placeholder="Occupation" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtGuardian1Address" class="form-label-custom">Residential Address</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian1Address" name="txtGuardian1Address" placeholder="Residential address" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINE 4: GUARDIAN 2 DETAILS -->
+            <div class="guardian-card-box border-info mb-4">
+                <h5 class="fw-bold text-info mb-3"><i class="fa-solid fa-shield-halved me-2"></i>Guardian 2 Information</h5>
+                <div class="row g-4">
+                    <div class="col-md-12">
+                        <div class="p-3 rounded mb-2" style="background: #0b132b; border: 1px dashed #38bdf8;">
+                            <label class="form-label-custom mb-2">Guardian 2 Photo Upload</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="width: 80px; height: 80px; border-radius: 0.75rem; overflow: hidden; background: #1c2541;">
+                                    <img id="imgGuardian2PhotoPreview" src="Images/Students/default-avatar.png" alt="Guardian 2 Preview" style="object-fit: cover; width: 100%; height: 100%;" />
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input type="file" class="form-control-custom" id="fileGuardian2Photo" name="fileGuardian2Photo" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian2Name" class="form-label-custom">Guardian 2 Full Name</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Name" name="txtGuardian2Name" placeholder="Enter Guardian 2 name" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian2Aadhaar" class="form-label-custom">Guardian 2 Aadhaar Number</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Aadhaar" name="txtGuardian2Aadhaar" placeholder="12-digit Aadhaar number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian2Rel" class="form-label-custom">Relationship</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Rel" name="txtGuardian2Rel" placeholder="e.g. Grandmother, Aunt" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian2Mobile" class="form-label-custom">Mobile Number</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Mobile" name="txtGuardian2Mobile" placeholder="10-digit mobile number" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian2WhatsApp" class="form-label-custom">WhatsApp Number</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2WhatsApp" name="txtGuardian2WhatsApp" placeholder="WhatsApp contact" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtGuardian2Email" class="form-label-custom">Email Address</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Email" name="txtGuardian2Email" placeholder="email@domain.com" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtGuardian2Occupation" class="form-label-custom">Occupation</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Occupation" name="txtGuardian2Occupation" placeholder="Occupation" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtGuardian2Address" class="form-label-custom">Residential Address</label>
+                        <input type="text" class="form-control-custom" id="txtGuardian2Address" name="txtGuardian2Address" placeholder="Residential address" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="d-flex justify-content-end gap-3 border-top border-secondary pt-4 mt-4">
+                <button type="submit" class="btn btn-primary-blue">Submit Application & Generate Receipt</button>
+            </div>
+        </div>
+
+    </div>
+
+            </div>
+        </main>
+    </form>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Application JS -->
+    <script src="JS/main.js"></script>
+</body>
+</html>

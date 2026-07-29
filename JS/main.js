@@ -97,8 +97,67 @@ document.addEventListener('DOMContentLoaded', function () {
                         imgPreview.src = evt.target.result;
                     };
                     reader.readAsDataURL(file);
-                }
-            });
+        }
+    }
+
+    // 4. Dynamic URL Query Parameter Renderer for PublicReceipt Page
+    if (window.location.pathname.includes('PublicReceipt')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        function getParam(key1, key2, fallback) {
+            const val = urlParams.get(key1) || (key2 ? urlParams.get(key2) : null);
+            return (val && val.trim()) ? val.trim() : fallback;
+        }
+
+        const studentName = getParam('txtFullName', 'sName', 'Student Application');
+        const gender = getParam('ddlGender', 'gender', 'Male');
+        const std = getParam('txtStandard', 'std', 'LKG');
+        const school = getParam('txtSchoolName', 'school', '-');
+        const route = getParam('txtComingFrom', 'route', '-');
+
+        const fatherName = getParam('txtFatherName', 'fName', '-');
+        const fatherAadhaar = getParam('txtFatherAadhaar', 'fAadhaar', '-');
+        const fatherMobile = getParam('txtFatherMobile', 'fMobile', '-');
+
+        const motherName = getParam('txtMotherName', 'mName', '-');
+        const motherAadhaar = getParam('txtMotherAadhaar', 'mAadhaar', '-');
+        const motherMobile = getParam('txtMotherMobile', 'mMobile', '-');
+
+        const g1Name = getParam('txtGuardian1Name', 'g1Name', '-');
+        const g1Rel = getParam('txtGuardian1Rel', 'g1Rel', '-');
+        const g1Mobile = getParam('txtGuardian1Mobile', 'g1Mobile', '-');
+
+        const g2Name = getParam('txtGuardian2Name', 'g2Name', '-');
+        const g2Rel = getParam('txtGuardian2Rel', 'g2Rel', '-');
+        const g2Mobile = getParam('txtGuardian2Mobile', 'g2Mobile', '-');
+
+        // Target elements if present
+        const elStudName = document.querySelector('.guardian-card-box .fs-5.text-white');
+        if (elStudName) elStudName.textContent = studentName;
+
+        const allValues = document.querySelectorAll('.guardian-card-box span.fw-bold');
+        if (allValues.length >= 15) {
+            allValues[0].textContent = studentName;
+            allValues[1].textContent = gender;
+            allValues[2].textContent = std;
+            allValues[3].textContent = school;
+            allValues[4].textContent = route;
+
+            allValues[5].textContent = fatherName;
+            allValues[6].textContent = fatherAadhaar;
+            allValues[7].textContent = fatherMobile;
+
+            allValues[8].textContent = motherName;
+            allValues[9].textContent = motherAadhaar;
+            allValues[10].textContent = motherMobile;
+
+            allValues[11].textContent = g1Name;
+            allValues[12].textContent = g1Rel;
+            allValues[13].textContent = g1Mobile;
+
+            allValues[14].textContent = g2Name;
+            allValues[15].textContent = g2Rel;
+            allValues[16].textContent = g2Mobile;
         }
     }
 
@@ -110,3 +169,4 @@ document.addEventListener('DOMContentLoaded', function () {
 function printReport() {
     window.print();
 }
+

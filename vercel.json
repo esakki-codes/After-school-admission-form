@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/Admission.aspx", "destination": "/index.html" },
+    { "source": "/PublicReceipt.aspx", "destination": "/PublicReceipt.html" },
+    { "source": "/PublicReceipt", "destination": "/PublicReceipt.html" }
+  ]
+}
