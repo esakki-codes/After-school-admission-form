@@ -19,7 +19,7 @@
     
 </head>
 <body style="background-color: #0b132b;">
-    <form id="formPublic" action="PublicReceipt.aspx" method="GET">
+    <form id="formPublic" action="Admission.aspx" method="POST" enctype="multipart/form-data">
         <main class="py-4">
             <div class="container" style="max-width: 900px;">
                 
@@ -72,22 +72,22 @@
             <div class="row g-4 mb-3">
                 <div class="col-md-12">
                     <label for="txtFullName" class="form-label-custom">Student Full Name <span class="required-star">*</span></label>
-                    <input type="text" class="form-control-custom" id="txtFullName" name="txtFullName" placeholder="Enter student's full name (Minimum 3 characters)" />
+                    <input type="text" class="form-control-custom" id="txtFullName" name="txtFullName" placeholder="Enter student's full name (Minimum 3 characters)" required />
                 </div>
 
                 <div class="col-md-6">
                     <label for="txtDOB" class="form-label-custom">Date of Birth <span class="required-star">*</span></label>
-                    <input type="date" class="form-control-custom" id="txtDOB" name="txtDOB" />
+                    <input type="date" class="form-control-custom" id="txtDOB" name="txtDOB" onchange="calculateAge();" oninput="calculateAge();" required />
                 </div>
 
                 <div class="col-md-6">
                     <label for="txtAge" class="form-label-custom">Age (Auto Calculated)</label>
-                    <input type="text" class="form-control-custom" id="txtAge" name="txtAge" placeholder="Select date of birth" />
+                    <input type="text" class="form-control-custom" id="txtAge" name="txtAge" placeholder="Select date of birth" readonly />
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label-custom">Gender <span class="required-star">*</span></label>
-                    <select class="form-select form-control-custom" id="ddlGender" name="ddlGender">
+                    <select class="form-select form-control-custom" id="ddlGender" name="ddlGender" required>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -116,7 +116,7 @@
 
                 <div class="col-md-6">
                     <label for="txtStandard" class="form-label-custom">Class / Standard <span class="required-star">*</span></label>
-                    <input type="text" class="form-control-custom" id="txtStandard" name="txtStandard" placeholder="e.g. LKG, UKG, Class 4" />
+                    <input type="text" class="form-control-custom" id="txtStandard" name="txtStandard" placeholder="e.g. LKG, UKG, Class 4" required />
                 </div>
 
                 <!-- WHICH ROUTE ARE YOU COMING FROM? -->
@@ -127,7 +127,7 @@
 
                 <div class="col-md-12">
                     <label for="txtAddress" class="form-label-custom">Residential Address <span class="required-star">*</span></label>
-                    <textarea class="form-control-custom" id="txtAddress" name="txtAddress"></textarea>
+                    <textarea class="form-control-custom" id="txtAddress" name="txtAddress" required></textarea>
                 </div>
 
                 <div class="col-md-12">
@@ -173,15 +173,15 @@
                     </div>
                     <div class="col-md-6">
                         <label for="txtFatherName" class="form-label-custom">Father Full Name <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtFatherName" name="txtFatherName" placeholder="Enter father name" />
+                        <input type="text" class="form-control-custom" id="txtFatherName" name="txtFatherName" placeholder="Enter father name" required />
                     </div>
                     <div class="col-md-6">
                         <label for="txtFatherAadhaar" class="form-label-custom">Father Aadhaar Number <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtFatherAadhaar" name="txtFatherAadhaar" placeholder="12-digit Aadhaar number" />
+                        <input type="text" class="form-control-custom" id="txtFatherAadhaar" name="txtFatherAadhaar" placeholder="12-digit Aadhaar number" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtFatherMobile" class="form-label-custom">Mobile Number <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtFatherMobile" name="txtFatherMobile" placeholder="10-digit mobile number" />
+                        <input type="text" class="form-control-custom" id="txtFatherMobile" name="txtFatherMobile" placeholder="10-digit mobile number" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtFatherWhatsApp" class="form-label-custom">WhatsApp Number</label>
@@ -221,15 +221,15 @@
                     </div>
                     <div class="col-md-6">
                         <label for="txtMotherName" class="form-label-custom">Mother Full Name <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtMotherName" name="txtMotherName" placeholder="Enter mother name" />
+                        <input type="text" class="form-control-custom" id="txtMotherName" name="txtMotherName" placeholder="Enter mother name" required />
                     </div>
                     <div class="col-md-6">
                         <label for="txtMotherAadhaar" class="form-label-custom">Mother Aadhaar Number <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtMotherAadhaar" name="txtMotherAadhaar" placeholder="12-digit Aadhaar number" />
+                        <input type="text" class="form-control-custom" id="txtMotherAadhaar" name="txtMotherAadhaar" placeholder="12-digit Aadhaar number" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtMotherMobile" class="form-label-custom">Mobile Number <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtMotherMobile" name="txtMotherMobile" placeholder="10-digit mobile number" />
+                        <input type="text" class="form-control-custom" id="txtMotherMobile" name="txtMotherMobile" placeholder="10-digit mobile number" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtMotherWhatsApp" class="form-label-custom">WhatsApp Number</label>
@@ -269,7 +269,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="txtGuardian1Name" class="form-label-custom">Guardian 1 Full Name <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtGuardian1Name" name="txtGuardian1Name" placeholder="Enter Guardian 1 name" />
+                        <input type="text" class="form-control-custom" id="txtGuardian1Name" name="txtGuardian1Name" placeholder="Enter Guardian 1 name" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtGuardian1Aadhaar" class="form-label-custom">Guardian 1 Aadhaar Number</label>
@@ -277,11 +277,11 @@
                     </div>
                     <div class="col-md-4">
                         <label for="txtGuardian1Rel" class="form-label-custom">Relationship <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtGuardian1Rel" name="txtGuardian1Rel" placeholder="e.g. Grandfather, Uncle" />
+                        <input type="text" class="form-control-custom" id="txtGuardian1Rel" name="txtGuardian1Rel" placeholder="e.g. Grandfather, Uncle" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtGuardian1Mobile" class="form-label-custom">Mobile Number <span class="required-star">*</span></label>
-                        <input type="text" class="form-control-custom" id="txtGuardian1Mobile" name="txtGuardian1Mobile" placeholder="10-digit mobile number" />
+                        <input type="text" class="form-control-custom" id="txtGuardian1Mobile" name="txtGuardian1Mobile" placeholder="10-digit mobile number" required />
                     </div>
                     <div class="col-md-4">
                         <label for="txtGuardian1WhatsApp" class="form-label-custom">WhatsApp Number</label>
@@ -369,6 +369,151 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom Application JS -->
-    <script src="JS/main.js"></script>
+    <script src="JS/main.js?v=20260730_v10"></script>
+
+    <!-- INLINE GUARANTEED REAL-TIME AGE CALCULATOR SCRIPT -->
+    <script>
+        (function () {
+            function getDob() {
+                return document.getElementById('txtDOB') || document.querySelector('input[type="date"]') || document.querySelector('input[name*="DOB"]');
+            }
+            function getAge() {
+                return document.getElementById('txtAge') || document.querySelector('input[name*="Age"]');
+            }
+            function doCalc() {
+                var dobEl = getDob();
+                var ageEl = getAge();
+                if (!dobEl || !ageEl) return;
+                var val = (dobEl.value || '').trim();
+                if (!val) {
+                    ageEl.value = '';
+                    return;
+                }
+                var nums = val.match(/\d+/g);
+                if (!nums || nums.length < 3) return;
+                var n0 = parseInt(nums[0], 10);
+                var n1 = parseInt(nums[1], 10);
+                var n2 = parseInt(nums[2], 10);
+                var y, m, d;
+                if (n0 > 1000) {
+                    y = n0; m = n1; d = n2;
+                } else if (n2 > 1000) {
+                    y = n2;
+                    if (n0 > 12) { d = n0; m = n1; }
+                    else if (n1 > 12) { d = n1; m = n0; }
+                    else { d = n0; m = n1; }
+                } else {
+                    return;
+                }
+                if (isNaN(y) || isNaN(m) || isNaN(d) || y < 1900) return;
+                var today = new Date();
+                var years = today.getFullYear() - y;
+                var months = (today.getMonth() + 1) - m;
+                var days = today.getDate() - d;
+                if (days < 0) months--;
+                if (months < 0) { years--; months += 12; }
+
+                var res = '';
+                if (years < 0) res = 'Invalid Date';
+                else if (years === 0) res = months > 0 ? (months + (months === 1 ? ' Month' : ' Months')) : 'Under 1 Month';
+                else if (months > 0) res = years + (years === 1 ? ' Year ' : ' Years ') + months + (months === 1 ? ' Month' : ' Months');
+                else res = years + (years === 1 ? ' Year' : ' Years');
+
+                if (ageEl.value !== res) {
+                    ageEl.value = res;
+                    ageEl.setAttribute('value', res);
+                }
+            }
+
+            window.calculateAge = doCalc;
+
+            window.previewPhoto = function (input, imgPreviewId) {
+                if (input && input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var img = document.getElementById(imgPreviewId);
+                        if (img) {
+                            img.src = e.target.result;
+                            img.style.display = 'block';
+                        }
+                        function setHidden(idKey, val) {
+                            var h = document.getElementById(idKey) || document.querySelector('input[id*="' + idKey + '"]');
+                            if (h) h.value = val;
+                        }
+
+                        if (imgPreviewId.includes('Father')) {
+                            sessionStorage.setItem('rfidPhotoFather', e.target.result);
+                            setHidden('hidFatherPhotoData', e.target.result);
+                        }
+                        if (imgPreviewId.includes('Mother')) {
+                            sessionStorage.setItem('rfidPhotoMother', e.target.result);
+                            setHidden('hidMotherPhotoData', e.target.result);
+                        }
+                        if (imgPreviewId.includes('Guardian1')) {
+                            sessionStorage.setItem('rfidPhotoG1', e.target.result);
+                            setHidden('hidGuardian1PhotoData', e.target.result);
+                        }
+                        if (imgPreviewId.includes('Guardian2')) {
+                            sessionStorage.setItem('rfidPhotoG2', e.target.result);
+                            setHidden('hidGuardian2PhotoData', e.target.result);
+                        }
+                        if (imgPreviewId.includes('PhotoPreview') && !imgPreviewId.includes('Father') && !imgPreviewId.includes('Mother') && !imgPreviewId.includes('Guardian')) {
+                            sessionStorage.setItem('rfidPhotoStudent', e.target.result);
+                        }
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            };
+
+            document.addEventListener('change', function (e) {
+                if (e.target && e.target.type === 'file' && e.target.files && e.target.files[0]) {
+                    var id = e.target.id || '';
+                    var name = e.target.name || '';
+                    var targetImgId = null;
+                    if (id.includes('filePhoto') || name.includes('filePhoto')) targetImgId = 'imgPhotoPreview';
+                    if (id.includes('Father') || name.includes('Father')) targetImgId = 'imgFatherPhotoPreview';
+                    if (id.includes('Mother') || name.includes('Mother')) targetImgId = 'imgMotherPhotoPreview';
+                    if (id.includes('Guardian1') || name.includes('Guardian1')) targetImgId = 'imgGuardian1PhotoPreview';
+                    if (id.includes('Guardian2') || name.includes('Guardian2')) targetImgId = 'imgGuardian2PhotoPreview';
+                    if (targetImgId) {
+                        window.previewPhoto(e.target, targetImgId);
+                    }
+                }
+            });
+
+            document.addEventListener('submit', function (e) {
+                var fImg = document.getElementById('imgFatherPhotoPreview');
+                var mImg = document.getElementById('imgMotherPhotoPreview');
+                var g1Img = document.getElementById('imgGuardian1PhotoPreview');
+                var g2Img = document.getElementById('imgGuardian2PhotoPreview');
+                var sImg = document.getElementById('imgPhotoPreview');
+
+                if (fImg && fImg.src && fImg.src.indexOf('data:image') === 0) {
+                    sessionStorage.setItem('rfidPhotoFather', fImg.src);
+                    var h = document.getElementById('hidFatherPhotoData'); if (h) h.value = fImg.src;
+                }
+                if (mImg && mImg.src && mImg.src.indexOf('data:image') === 0) {
+                    sessionStorage.setItem('rfidPhotoMother', mImg.src);
+                    var h = document.getElementById('hidMotherPhotoData'); if (h) h.value = mImg.src;
+                }
+                if (g1Img && g1Img.src && g1Img.src.indexOf('data:image') === 0) {
+                    sessionStorage.setItem('rfidPhotoG1', g1Img.src);
+                    var h = document.getElementById('hidGuardian1PhotoData'); if (h) h.value = g1Img.src;
+                }
+                if (g2Img && g2Img.src && g2Img.src.indexOf('data:image') === 0) {
+                    sessionStorage.setItem('rfidPhotoG2', g2Img.src);
+                    var h = document.getElementById('hidGuardian2PhotoData'); if (h) h.value = g2Img.src;
+                }
+            });
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', doCalc);
+            } else {
+                doCalc();
+            }
+
+            setInterval(doCalc, 100);
+        })();
+    </script>
 </body>
 </html>
