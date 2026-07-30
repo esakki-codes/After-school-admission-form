@@ -142,6 +142,149 @@
                     </div>
                 </div>
 
+                <!-- RFID SMART CARDS SECTION -->
+                <div class="col-md-12">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold text-dark mb-0"><i class="fa-solid fa-id-card-clip text-primary me-2"></i>Official Parent & Guardian RFID Smart Cards</h5>
+                            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill no-print" onclick="downloadAllRFIDCardsPDF();">
+                                <i class="fa-solid fa-download me-1"></i> Export RFID Cards PDF
+                            </button>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-4">
+                                <!-- CARD 1: FATHER -->
+                                <div class="col-md-6">
+                                    <div class="rfid-card printable-rfid">
+                                        <div class="rfid-header">
+                                            <div class="rfid-logo-box">
+                                                <img src="Images/logo.png" class="rfid-logo-img" alt="Logo" />
+                                                <div>
+                                                    <div class="fw-bold text-white small">TN HAPPY KIDS</div>
+                                                    <small class="text-info" style="font-size: 0.7rem;">SMART PICKUP PASS</small>
+                                                </div>
+                                            </div>
+                                            <div class="rfid-chip-icon"><i class="fa-solid fa-microchip text-dark" style="font-size: 0.8rem;"></i></div>
+                                        </div>
+                                        <div class="rfid-body">
+                                            <div class="rfid-photo-container">
+                                                <img src="Images/Students/default-avatar.png" alt="Father Photo" />
+                                            </div>
+                                            <div class="rfid-details">
+                                                <div class="rfid-person-name"><asp:Literal ID="litRfidFatherName" runat="server">-</asp:Literal></div>
+                                                <span class="rfid-rel-badge rfid-rel-father">Father</span>
+                                                <div class="rfid-student-info mt-2">Student: <strong><asp:Literal ID="litRfidStudentName1" runat="server">-</asp:Literal></strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="rfid-footer">
+                                            <div class="rfid-number-tag"><asp:Literal ID="litRfidFatherNo" runat="server">RFID-FAT-00000</asp:Literal></div>
+                                            <div class="rfid-qr-box">
+                                                <img id="imgAdminQrFather" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=RFID-FAT-00000" alt="QR" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 2: MOTHER -->
+                                <div class="col-md-6">
+                                    <div class="rfid-card printable-rfid">
+                                        <div class="rfid-header">
+                                            <div class="rfid-logo-box">
+                                                <img src="Images/logo.png" class="rfid-logo-img" alt="Logo" />
+                                                <div>
+                                                    <div class="fw-bold text-white small">TN HAPPY KIDS</div>
+                                                    <small class="text-info" style="font-size: 0.7rem;">SMART PICKUP PASS</small>
+                                                </div>
+                                            </div>
+                                            <div class="rfid-chip-icon"><i class="fa-solid fa-microchip text-dark" style="font-size: 0.8rem;"></i></div>
+                                        </div>
+                                        <div class="rfid-body">
+                                            <div class="rfid-photo-container">
+                                                <img src="Images/Students/default-avatar.png" alt="Mother Photo" />
+                                            </div>
+                                            <div class="rfid-details">
+                                                <div class="rfid-person-name"><asp:Literal ID="litRfidMotherName" runat="server">-</asp:Literal></div>
+                                                <span class="rfid-rel-badge rfid-rel-mother">Mother</span>
+                                                <div class="rfid-student-info mt-2">Student: <strong><asp:Literal ID="litRfidStudentName2" runat="server">-</asp:Literal></strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="rfid-footer">
+                                            <div class="rfid-number-tag"><asp:Literal ID="litRfidMotherNo" runat="server">RFID-MTH-00000</asp:Literal></div>
+                                            <div class="rfid-qr-box">
+                                                <img id="imgAdminQrMother" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=RFID-MTH-00000" alt="QR" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 3: GUARDIAN 1 -->
+                                <div class="col-md-6">
+                                    <div class="rfid-card printable-rfid">
+                                        <div class="rfid-header">
+                                            <div class="rfid-logo-box">
+                                                <img src="Images/logo.png" class="rfid-logo-img" alt="Logo" />
+                                                <div>
+                                                    <div class="fw-bold text-white small">TN HAPPY KIDS</div>
+                                                    <small class="text-info" style="font-size: 0.7rem;">SMART PICKUP PASS</small>
+                                                </div>
+                                            </div>
+                                            <div class="rfid-chip-icon"><i class="fa-solid fa-microchip text-dark" style="font-size: 0.8rem;"></i></div>
+                                        </div>
+                                        <div class="rfid-body">
+                                            <div class="rfid-photo-container">
+                                                <img src="Images/Students/default-avatar.png" alt="Guardian 1 Photo" />
+                                            </div>
+                                            <div class="rfid-details">
+                                                <div class="rfid-person-name"><asp:Literal ID="litRfidG1Name" runat="server">-</asp:Literal></div>
+                                                <span class="rfid-rel-badge rfid-rel-g1"><asp:Literal ID="litRfidG1Rel" runat="server">Guardian 1</asp:Literal></span>
+                                                <div class="rfid-student-info mt-2">Student: <strong><asp:Literal ID="litRfidStudentName3" runat="server">-</asp:Literal></strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="rfid-footer">
+                                            <div class="rfid-number-tag"><asp:Literal ID="litRfidG1No" runat="server">RFID-G1-00000</asp:Literal></div>
+                                            <div class="rfid-qr-box">
+                                                <img id="imgAdminQrG1" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=RFID-G1-00000" alt="QR" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 4: GUARDIAN 2 -->
+                                <div class="col-md-6">
+                                    <div class="rfid-card printable-rfid">
+                                        <div class="rfid-header">
+                                            <div class="rfid-logo-box">
+                                                <img src="Images/logo.png" class="rfid-logo-img" alt="Logo" />
+                                                <div>
+                                                    <div class="fw-bold text-white small">TN HAPPY KIDS</div>
+                                                    <small class="text-info" style="font-size: 0.7rem;">SMART PICKUP PASS</small>
+                                                </div>
+                                            </div>
+                                            <div class="rfid-chip-icon"><i class="fa-solid fa-microchip text-dark" style="font-size: 0.8rem;"></i></div>
+                                        </div>
+                                        <div class="rfid-body">
+                                            <div class="rfid-photo-container">
+                                                <img src="Images/Students/default-avatar.png" alt="Guardian 2 Photo" />
+                                            </div>
+                                            <div class="rfid-details">
+                                                <div class="rfid-person-name"><asp:Literal ID="litRfidG2Name" runat="server">-</asp:Literal></div>
+                                                <span class="rfid-rel-badge rfid-rel-g2"><asp:Literal ID="litRfidG2Rel" runat="server">Guardian 2</asp:Literal></span>
+                                                <div class="rfid-student-info mt-2">Student: <strong><asp:Literal ID="litRfidStudentName4" runat="server">-</asp:Literal></strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="rfid-footer">
+                                            <div class="rfid-number-tag"><asp:Literal ID="litRfidG2No" runat="server">RFID-G2-00000</asp:Literal></div>
+                                            <div class="rfid-qr-box">
+                                                <img id="imgAdminQrG2" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=RFID-G2-00000" alt="QR" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
