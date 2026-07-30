@@ -286,8 +286,82 @@ select.form-control-custom option {
     border-right: 1px solid #1e293b;
 }
 
+/* ============================================================================
+/* ============================================================================
+   4 DISTINCT COLOR ID CARD DESIGN SYSTEM
+   ============================================================================ */
+.rfid-card {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+    color: #0f172a !important;
+    font-family: 'Outfit', 'Segoe UI', sans-serif !important;
+    margin-bottom: 1.5rem;
+}
+
+/* CARD 1: FATHER - ROYAL BLUE THEME */
+.rfid-card-father {
+    border: 2px solid #2563eb !important;
+}
+.rfid-header-father {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%) !important;
+    padding: 10px 14px !important;
+    border-bottom: 3px solid #3b82f6 !important;
+}
+.rfid-photo-father {
+    border: 2px solid #2563eb !important;
+}
+
+/* CARD 2: MOTHER - ROSE PINK THEME */
+.rfid-card-mother {
+    border: 2px solid #db2777 !important;
+}
+.rfid-header-mother {
+    background: linear-gradient(135deg, #be185d 0%, #831843 100%) !important;
+    padding: 10px 14px !important;
+    border-bottom: 3px solid #ec4899 !important;
+}
+.rfid-photo-mother {
+    border: 2px solid #db2777 !important;
+}
+
+/* CARD 3: GUARDIAN 1 - EMERALD GREEN THEME */
+.rfid-card-g1 {
+    border: 2px solid #059669 !important;
+}
+.rfid-header-g1 {
+    background: linear-gradient(135deg, #047857 0%, #064e3b 100%) !important;
+    padding: 10px 14px !important;
+    border-bottom: 3px solid #10b981 !important;
+}
+.rfid-photo-g1 {
+    border: 2px solid #059669 !important;
+}
+
+/* CARD 4: GUARDIAN 2 - AMETHYST PURPLE THEME */
+.rfid-card-g2 {
+    border: 2px solid #7c3aed !important;
+}
+.rfid-header-g2 {
+    background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%) !important;
+    padding: 10px 14px !important;
+    border-bottom: 3px solid #8b5cf6 !important;
+}
+.rfid-photo-g2 {
+    border: 2px solid #7c3aed !important;
+}
+
+.rfid-body {
+    padding: 14px !important;
+    background: #ffffff !important;
+}
+
 /* Print Overrides */
 @media print {
     body { background: #ffffff !important; color: #000000 !important; }
     .brand-header-card, .form-step-card, .stepper-container { background: #ffffff !important; color: #000000 !important; }
+    .rfid-card { background: #ffffff !important; color: #000000 !important; border: 2px solid #000000 !important; }
+    .rfid-person-name { color: #000000 !important; }
+    .rfid-number-tag { background: #f1f5f9 !important; color: #000000 !important; }
 }
