@@ -12,6 +12,9 @@
                 <p class="text-muted small mb-0">Printable payment invoice for student fee transaction</p>
             </div>
             <div class="d-flex gap-2">
+                <button type="button" id="btnDownloadPDF" class="btn btn-success fw-semibold" onclick="downloadReceiptPDF();">
+                    <i class="fa-solid fa-file-pdf me-1"></i> Download PDF
+                </button>
                 <button type="button" class="btn btn-primary fw-semibold btn-print" onclick="printReport()">
                     <i class="fa-solid fa-print me-1"></i> Print Receipt
                 </button>
